@@ -12,7 +12,7 @@
 #' product(A,B,x,1)
 #' product(A,B,x,2)
 product<-function(A,B,x,First=1){
-  if(first==1){
+  if(First==1){
     return(A%*%B%*%x)
   }
   else return(A%*%(B%*%x))
