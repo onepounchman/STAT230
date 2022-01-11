@@ -1,0 +1,32 @@
+---
+title: "stat 230 hw1"
+output: html_document
+---
+
+
+
+```{r,message=FALSE,warning=FALSE}
+library(bench)
+library(devtools)
+load_all('./')
+
+A<-matrix(rnorm(400),nrow=20)
+B<-matrix(rnorm(400),nrow=20)
+x<-runif(20)
+
+(lb <- bench::mark(
+  product(A,B,x,1),
+  product(A,B,x,2)
+))
+
+plot(lb)
+
+```
+
+It seems that the second way of computing the product is much faster and saves more memory。
+
+
+Github Repository link: https://github.com/onepounchman/STAT230.git
+
+
+
